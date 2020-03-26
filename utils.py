@@ -57,7 +57,7 @@ def create_dataset_settings(config):
     return settings
 
 
-def load_dataset(path, dataset_params=None):
+def load_dataset(path, dataset_params=None, multiclass=False):
     if dataset_params is None:
         dataset_root, _ = os.path.split(path)
         with open(os.path.join(dataset_root, 'config.yaml')) as config_file:
@@ -74,7 +74,7 @@ def load_dataset(path, dataset_params=None):
     assert dataset_params.target_column is not None, 'target column should be specified'
     y = data[dataset_params.target_column]
 
-    if dataset_params.positive_class_range is not None:
+    if dataset_params.positive_class_range is not None and not multiclass:
         left, right = dataset_params.positive_class_range
         y = np.logical_and(y >= left, y < right)
     
@@ -84,14 +84,15 @@ def load_dataset(path, dataset_params=None):
     return data[x_columns], y, dataset_params.cat_features
 
 
-def train_test_dataset(X, y, cat_features=None, auto_class_weights=False, loss_function='Logloss', iterations=2000):
+def train_test_dataset(X, y, cat_features=None, auto_class_weights=False, 
+                       loss_function='Logloss', iterations=2000, metrics=['AUC']):
     pool = Pool(data=X,
                 label=y,
                 cat_features=cat_features)
     params = {
         'task_type': 'CPU',
         'auto_class_weights': auto_class_weights,
-        'custom_metric': 'AUC',
+        'custom_metric': metrics,
         'verbose': False,
         'loss_function': loss_function,
         'iterations': iterations
