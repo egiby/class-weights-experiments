@@ -3,8 +3,6 @@
 | Dataset | Source                                          | Size  | NumFeatures | ClassesCount | ClassSizes | AUC-mu | AUC-mu-sqrt-weights | AUC-mu-linear-weights |
 |---------|-------------------------------------------------|-------|-------------|--------------|-------|--------------|-----|--------------------|
 | Abalone | https://archive.ics.uci.edu/ml/datasets/Abalone | 4177  |  8 | 28   | ** | 0.5238 ± 0.1483      |    0.5249 ± 0.1440    | 0.5215 +- 0.1465 |
-|                     |
-|        |                     |
 | Covertype10000* | https://archive.ics.uci.edu/ml/datasets/Covertype   | 10000 | 54  | 7 | 1: 37.23%; 2: 48.35%; 3: 5.85%; 4: 0.47%; 5: 1.70%; 6: 2.97%; 7: 3.43%; |   0.9839  ± 0.0029  |   0.9850 ± 0.0027  | 0.9855 +- 0.0021 |
 | Wine    | https://archive.ics.uci.edu/ml/datasets/Wine   | 4898 | 11   | 7 | 3: 0.41%; 4: 3.33%; 5: 29.75%; 6: 44.88%; 7: 17.97%; 8: 3.57%; 9: 0.10%;  |  0.8739  ± 0.0321  |      0.8740  ± 0.0308     | 0.8768 +- 0.0257 |
 
