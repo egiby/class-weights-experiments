@@ -1,11 +1,11 @@
 # Results of weighting experiments
 
-[Multiclassification results](!!)
+[Multiclassification results](multiclass.md)
 
 ## Binary classification
 
 | Dataset | Source                                          | Size  | NumFeatures | PositiveClass | PositiveProportion | IsMulticlass | AUC | AUC-linear-weights | AUC-sqrt-weights |
-|---------|-------------------------------------------------|-------|----|--------------|--------------------|--------------|-----|--------------------|------------------|--------|---------------------|
+|---------|-------------------------------------------------|-------|----|--------------|--------------------|--------------|-----|--------------------|------------------|
 | Abalone | https://archive.ics.uci.edu/ml/datasets/Abalone | 4177  |  8 | merged 16-27 | 6.2%               | true         |    0.8934  ± 0.0110   |    0.8936 ± 0.0124    |   0.8918 ± 0.0128    | 
 | Amazon  | catboost.datasets                               | 32771 |  9 |  0           | 5.7%               | false        |   0.8441  ± 0.0062   |        0.8415  ± 0.0085    |   0.8422  ± 0.0089    |
 | Adult   | https://archive.ics.uci.edu/ml/datasets/Adult   | 32561 | 14 |  >50K        | 24.1%              | false        |    0.9298  ± 0.0033   |     0.9297  ± 0.0037   |      0.9300  ± 0.0032              |
