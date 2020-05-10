@@ -84,7 +84,7 @@ def load_dataset(path, dataset_params=None, multiclass=False):
     return data[x_columns], y, dataset_params.cat_features
 
 
-def train_test_dataset(X, y, cat_features=None, auto_class_weights=False, 
+def train_test_dataset(X, y, cat_features=None, auto_class_weights=None, 
                        loss_function='Logloss', iterations=2000, metrics=['AUC']):
     pool = Pool(data=X,
                 label=y,
@@ -102,5 +102,6 @@ def train_test_dataset(X, y, cat_features=None, auto_class_weights=False,
         pool,
         params,
         fold_count=5,
-        plot=True
+        plot=True,
+        logging_level='Info'
     )
