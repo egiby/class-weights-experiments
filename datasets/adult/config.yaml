@@ -1,0 +1,12 @@
+DatasetSettings:
+    Target: 14
+    PositiveClass: 1
+    CatFeatures:
+        - 1
+        - 3
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 13

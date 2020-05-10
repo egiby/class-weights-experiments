@@ -1,0 +1,5 @@
+DatasetSettings:
+    Target: quality
+    PositiveClass: 8-11
+    Separator: ';'
+    HasHeader: true
